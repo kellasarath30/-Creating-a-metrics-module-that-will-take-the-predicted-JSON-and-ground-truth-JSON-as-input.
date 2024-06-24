@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        .metrics-table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 600px;
+        }
+        .metrics-table th, .metrics-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        .metrics-table th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .metrics-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .metrics-table tr:hover {
+            background-color: #ddd;
+        }
+        .metrics-table th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+        }
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Result</h1>
+        <h2>Metrics</h2>
+        <table class="metrics-table">
+            <tr>
+                <th>Metric</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>Precision</td>
+                <td>{{ metrics['precision'] }}</td>
+            </tr>
+            <tr>
+                <td>Recall</td>
+                <td>{{ metrics['recall'] }}</td>
+            </tr>
+            <tr>
+                <td>F1 Score</td>
+                <td>{{ metrics['f1_score'] }}</td>
+            </tr>
+            <tr>
+                <td>Text Accuracy</td>
+                <td>{{ metrics['text_accuracy'] }}</td>
+            </tr>
+        </table>
+        <br>
+        <a href="{{ url_for('index') }}" class="btn">Upload Another File</a>
+    </div>
+</body>
+</html>

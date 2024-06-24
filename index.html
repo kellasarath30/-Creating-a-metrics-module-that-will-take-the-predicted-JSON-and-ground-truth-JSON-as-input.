@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Image and JSON Files</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        .upload-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+        .upload-form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        .upload-form input[type="file"] {
+            display: block;
+            margin: 0 auto 20px;
+        }
+        .upload-form input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-decoration: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .upload-form input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Upload Image and JSON Files</h1>
+    <div class="upload-form">
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <label for="image">Select image:</label>
+            <input type="file" name="image" accept=".jpg,.jpeg,.png"><br>
+            <label for="gt_json">Select Ground Truth JSON:</label>
+            <input type="file" name="gt_json" accept=".json"><br>
+            <label for="pred_json">Select Predicted JSON:</label>
+            <input type="file" name="pred_json" accept=".json"><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
